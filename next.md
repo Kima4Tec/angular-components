@@ -93,5 +93,3 @@ createBook() --> Observable<Book>
 
 ---
 
-
-Vil du have, jeg laver det?
