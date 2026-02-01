@@ -125,9 +125,8 @@ BookService.createBook()
 
 ---
 
-Du kan læse om **Observables i Angular** direkte i den officielle Angular‑dokumentation – det er den mest autoritative og opdaterede kilde for, hvordan Angular bruger observables til asynkrone data‑streams (fx HTTP‑kald, forms, events mv.). ([angular.io][1])
 
-### 📘 Officiel Angular dokumentation (Angular.io)
+### Officiel Angular dokumentation (Angular.io)
 
 🔗 **Observables in Angular (guide)**
 Angular beskriver her, hvordan frameworket bruger observables til at håndtere asynkrone operationer som HTTP‑requests, router‑events og forms. ([angular.io][1])
