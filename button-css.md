@@ -71,3 +71,26 @@ login-side
 />
 
 ```
+
+## Uden ngClass – kun boolean input
+
+### button.component.ts
+```
+isDanger = input(false);
+```
+### button.component.html
+```
+<button
+  class="btn"
+  [class.btn-red]="isDanger()"
+  [class.btn-green]="!isDanger()"
+  (click)="btnClicked.emit()"
+>
+  {{ label() }}
+</button>
+```
+### Brug
+```
+<app-button label="Log ud" [isDanger]="true" />
+<app-button label="Log ind" />
+```
