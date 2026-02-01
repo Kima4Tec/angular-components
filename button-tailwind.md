@@ -1,4 +1,4 @@
-# Button
+# Button med tailwind
 ### ts og html
 ```
 import { Component, input, output } from '@angular/core';
