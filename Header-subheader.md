@@ -137,4 +137,15 @@
 
 ```
 
-*Hvis der er forskellige subheaders på de underliggende sider:*
+**Hvis der er forskellige subheaders på de underliggende sider:**
+På app.html:
+```
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+```
+og de øvrige sider:
+```
+<app-subheader></app-subheader>
+
+```
