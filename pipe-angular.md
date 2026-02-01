@@ -170,11 +170,11 @@ Data flyder gennem pipe før subscriber
 **Du kan tilføje så mange operators du vil, fx map, filter, retry, osv.**
 
 #### Kort opsummering
-| Element	| Funktion |
-| pipe() | Kæder RxJS operators til en Observable |
-| tap() | Side-effects uden at ændre data (fx console.log) |
-| catchError() | Håndterer fejl og returnerer en ny Observable eller throwError |
-| Subscriber | Modtager endeligt data (eller error) |
+| Element	| Funktion | 
+| pipe() | Kæder RxJS operators til en Observable | 
+| tap() | Side-effects uden at ændre data (fx console.log) | 
+| catchError() | Håndterer fejl og returnerer en ny Observable eller throwError | 
+| Subscriber | Modtager endeligt data (eller error) | 
 
 #### Tip:
 pipe bruges ALDRIG i template – det er kun i TypeScript / services til observables.
