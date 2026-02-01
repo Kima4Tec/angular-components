@@ -108,5 +108,74 @@ this.http.get<Book[]>('http://localhost:5000/api/books')
 
 ---
 
-Dokumentet dækker det essentielle omkring pipes i Angular og viser både template- og RxJS-anvendelser.
+### Eksempel i service
+I et service-eksempel er pipe en RxJS-funktion, som bruges på Observables (det, HttpClient altid returnerer).
+
+Formålet er at kæde operators, som kan transformere, logge eller håndtere fejl, før komponenten modtager data.
+
+### Syntax:
+```
+this.http.get<Book[]>(this.apiUrl)
+  .pipe(
+    catchError(this.handleError)
+  );
+```
+
+- this.http.get<Book[]>(...) returnerer en Observable<Book[]>
+- .pipe(...) siger: “før dataen sendes til subscriber, anvend disse operators”
+
+### Operators kan fx være:
+- map() → transformer data
+- tap() → udfør side-effects som logning
+- catchError() → håndter fejl
+
+🔹 Eksempler fra service
+#### getAll()
+```
+return this.http.get<Book[]>(this.apiUrl)
+  .pipe(catchError(this.handleError));
+```
+
+Her bruges kun catchError
+- Hvis request fejler (fx server nede, 500 error), vil handleError blive kaldt
+- pipe sørger for, at error håndteres inden data når subscriber
+
+#### create()
+```
+return this.http.post<Book>(this.apiUrl, book)
+  .pipe(
+    tap(() => console.log(`Book created: ${book.title}`)),
+    catchError(this.handleError)
+  );
+```
+- tap() → udfører side-effect uden at ændre data (console.log her)
+- catchError() → håndterer errors
+
+#### pipe kombinerer begge operators, rækkefølgen betyder:
+- Log data med tap
+- Fang fejl med catchError
+
+### Sådan fungerer det visuelt
+```
+HTTP GET → Observable<Book[]> 
+        │
+        ├─ pipe()
+        │    ├─ tap()       <- (side-effect, fx log)
+        │    └─ catchError() <- (håndter fejl)
+        │
+      Subscriber receives data (eller error)
+```
+Data flyder gennem pipe før subscriber
+
+**Du kan tilføje så mange operators du vil, fx map, filter, retry, osv.**
+
+#### Kort opsummering
+| Element	| Funktion |
+| pipe() | Kæder RxJS operators til en Observable |
+| tap() | Side-effects uden at ændre data (fx console.log) |
+| catchError() | Håndterer fejl og returnerer en ny Observable eller throwError |
+| Subscriber | Modtager endeligt data (eller error) |
+
+#### Tip:
+pipe bruges ALDRIG i template – det er kun i TypeScript / services til observables.
 
