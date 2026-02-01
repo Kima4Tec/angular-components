@@ -125,4 +125,60 @@ BookService.createBook()
 
 ---
 
-Vil du have, jeg laver det?
+Du kan læse om **Observables i Angular** direkte i den officielle Angular‑dokumentation – det er den mest autoritative og opdaterede kilde for, hvordan Angular bruger observables til asynkrone data‑streams (fx HTTP‑kald, forms, events mv.). ([angular.io][1])
+
+### 📘 Officiel Angular dokumentation (Angular.io)
+
+🔗 **Observables in Angular (guide)**
+Angular beskriver her, hvordan frameworket bruger observables til at håndtere asynkrone operationer som HTTP‑requests, router‑events og forms. ([angular.io][1])
+
+📌 **Observables for streams of values**
+Denne side går mere i dybden med, hvordan observables fungerer som datastrømme over tid og bruges i Angular. ([angular.io][2])
+
+🔗 **RxJS‑biblioteket**
+Angular har også en guide til RxJS‑biblioteket, som er den implementering af Observables, Angular bruger. Her kan du lære om operators og hvordan du bygger reaktive streams. ([v17.angular.io][3])
+
+---
+
+### Dokumentation
+
+Det officielle Angular site er:
+
+➡️ **[https://angular.io/guide/observables-in-angular](https://angular.io/guide/observables-in-angular)** – Angular’s guide til Observables og hvordan de bruges i apps (HTTP, events, formularer). ([angular.io][1])
+
+➡️ **[https://angular.io/guide/observables](https://angular.io/guide/observables)** – En mere detaljeret forklaring af Observable‑konceptet i Angular sammenhæng. ([angular.io][2])
+
+➡️ **[https://angular.io/guide/rx-library](https://angular.io/guide/rx-library)** – Baggrund om RxJS‑biblioteket, naming conventions og brug af observables i Angular. ([v17.angular.io][3])
+
+---
+
+### 📌 Ekstra nyttige officielle ressourcer
+
+Ud over Angular‑guides:
+
+✔️ **Angular Reactive Forms guide** – fordi reaktive formularer er bygget på observables. ([angular.dev][4])
+
+✔️ **Angular Signals & RxJS interoperabilitet** – nyere emner, men viser hvordan Angular udvikler sig i forhold til reaktiv programmering. ([angular.dev][5])
+
+---
+
+### Mere om RxJS
+
+Angular bruger **RxJS** til alle observable‑streams, så dokumentationen på:
+
+➡️ **[https://rxjs.dev/guide/observable](https://rxjs.dev/guide/observable)** – er den officielle RxJS guide til *hvad en Observable egentlig er*, hvordan den fungerer, og hvilke muligheder du har. ([rxjs.dev][6])
+
+---
+
+💡 **Tip:** Søg efter “Angular Observables” og “RxJS” på angular.io – de fleste Angular guides linker direkte til brugen af observables i kontekst (HTTP, formularer, routing osv.). ([angular.io][7])
+
+---
+
+[1]: https://angular.io/guide/observables-in-angular?utm_source=chatgpt.com "Observables in Angular"
+[2]: https://angular.io/guide/observables?utm_source=chatgpt.com "Using observables for streams of values"
+[3]: https://v17.angular.io/guide/rx-library?utm_source=chatgpt.com "The RxJS library"
+[4]: https://angular.dev/guide/forms/reactive-forms?utm_source=chatgpt.com "Reactive forms"
+[5]: https://angular.dev/ecosystem/rxjs-interop?utm_source=chatgpt.com "Signals interop"
+[6]: https://rxjs.dev/guide/observable?utm_source=chatgpt.com "Observable"
+[7]: https://angular.io/docs?utm_source=chatgpt.com "Introduction to the Angular docs"
+
