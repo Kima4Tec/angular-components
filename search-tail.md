@@ -41,6 +41,9 @@ export class SearchField {
 ```
     <app-search-field />
 ```
-  
-  archBooks() {
-    console.log('Searching for:', 
+og i component:
+```
+searchBooks() {
+    console.log('Searching for:', this.query);
+  }
+```
