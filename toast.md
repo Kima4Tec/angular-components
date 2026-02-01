@@ -5,3 +5,62 @@
   - Succesfuld handling (fx “Book added!”)
   - Fejl (fx “Failed to delete book”)
   - Advarsler (fx “Are you sure?”)
+
+### Eksempel
+```
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-toast',
+  template: `
+    <div *ngIf="message" class="toast" [ngClass]="type">
+      {{ message }}
+    </div>
+  `,
+  styles: [`
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 1rem 1.5rem;
+      border-radius: 5px;
+      color: white;
+      animation: fadeOut 4s forwards;
+    }
+    .success { background-color: green; }
+    .error { background-color: red; }
+    .info { background-color: blue; }
+    .warning { background-color: orange; }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  `]
+})
+export class ToastComponent {
+  message: string | null = null;
+  type: 'success' | 'error' | 'info' | 'warning' = 'info';
+
+  show(msg: string, type: 'success' | 'error' | 'info' | 'warning' = 'info') {
+    this.message = msg;
+    this.type = type;
+    setTimeout(() => this.message = null, 4000); // forsvinder efter 4 sek
+  }
+}
+
+```
+
+### Brug af eksemplet
+```
+constructor(private bookService: BookService, private toast: ToastComponent) {}
+
+addBook() {
+  this.bookService.createBook(this.book).subscribe({
+    next: () => this.toast.show('Book added!', 'success'),
+    error: err => this.toast.show('Failed to add book: ' + err.message, 'error')
+  });
+}
+
+```
