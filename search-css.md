@@ -27,16 +27,8 @@ search.css
   gap: 0.5rem;
 }
 
-/* Small screens (sm:) */
-@media (min-width: 640px) {
-  .search-container {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-  }
-}
 
-/* Medium screens (md:) */
+/* Medium screens */
 @media (min-width: 768px) {
   .search-container {
     padding: 0.25rem 0.75rem;
@@ -53,7 +45,12 @@ search.css
 }
 
 @media (min-width: 640px) {
-  .search-input {
+.search-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+.search-input {
     width: 16rem; /* sm:w-64 */
   }
 }
