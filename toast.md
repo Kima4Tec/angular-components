@@ -64,3 +64,24 @@ addBook() {
 }
 
 ```
+
+
+## Man kan også bruge eksterne biblioteker - gerne brugt i produktion
+  - ngx-toastr (link)
+  - Angular Material Snackbar
+
+Eksempel med Angular Material:
+```
+import { MatSnackBar } from '@angular/material/snack-bar';
+
+constructor(private snackBar: MatSnackBar) {}
+
+showToast(msg: string) {
+  this.snackBar.open(msg, 'Close', { duration: 3000 });
+}
+
+```
+
+- Meget nemt at bruge
+- Automatisk styling og animation
+- Kan bruges til succes, fejl, advarsler osv.
