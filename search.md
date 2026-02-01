@@ -79,3 +79,21 @@ search.css
 }
 
 ```
+
+### search.ts
+```
+export class SearchField {
+  query: any;
+
+  searchBooks() {
+    console.log('Searching for:', this.query);
+  }
+}
+
+```
+
+### Brug
+```
+<app-search-field />
+
+```
